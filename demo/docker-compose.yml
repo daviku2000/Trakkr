@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: trakkr-db
+    environment:
+      POSTGRES_DB: trakkr
+      POSTGRES_USER: trakkr
+      POSTGRES_PASSWORD: trakkr
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
